@@ -1,0 +1,1472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <title>ProLocal Services – Get a Free Quote</title>
+    <meta name="description" content="Fast, reliable local home services. Trusted by 150+ local customers. Get a free, no-obligation quote today." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0F2D4E;
+            --accent: #F59E0B;
+            --background: #FAF9F6;
+            --foreground: #1a1a1a;
+            --card-bg: #ffffff;
+            --border-color: #e5e5e5;
+            --muted: #6b7280;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: var(--background);
+            color: var(--foreground);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Sora', sans-serif;
+            font-weight: 700;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        @media (min-width: 640px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .container {
+                padding: 0 2rem;
+            }
+        }
+
+        /* Navbar */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 1.125rem;
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background-color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: none;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        @media (min-width: 768px) {
+            .nav-links {
+                display: flex;
+            }
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--muted);
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--foreground);
+        }
+
+        .menu-toggle {
+            display: block;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .menu-toggle {
+                display: none;
+            }
+        }
+
+        /* CTA Button */
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background-color: var(--accent);
+            color: #78350f;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 10px 15px -3px rgba(245, 158, 11, 0.3);
+            animation: pulse 2.5s ease-in-out infinite;
+        }
+
+        .cta-btn:hover {
+            background-color: #fbbf24;
+            transform: scale(1.05);
+        }
+
+        .cta-btn:active {
+            transform: scale(0.95);
+        }
+
+        .cta-btn-lg {
+            padding: 1rem 2rem;
+            font-size: 1.125rem;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.4);
+            }
+            50% {
+                box-shadow: 0 0 0 10px rgba(245, 158, 11, 0);
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 64px;
+            padding: 4rem 0;
+            background-color: var(--primary);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            opacity: 0.05;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        @media (min-width: 1024px) {
+            .hero-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .hero-text h1 {
+            font-size: 2.25rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        @media (min-width: 640px) {
+            .hero-text h1 {
+                font-size: 3rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .hero-text h1 {
+                font-size: 3.75rem;
+            }
+        }
+
+        .hero-text h1 .highlight {
+            color: var(--accent);
+        }
+
+        .hero-text p {
+            font-size: 1.125rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 2rem;
+            max-width: 500px;
+            line-height: 1.8;
+        }
+
+        .trust-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 9999px;
+            padding: 0.5rem 1rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .stars {
+            display: flex;
+            gap: 0.125rem;
+        }
+
+        .star {
+            color: var(--accent);
+            font-size: 1rem;
+        }
+
+        .benefits {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+        }
+
+        @media (min-width: 640px) {
+            .benefits {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 0.625rem 1rem;
+            font-size: 0.875rem;
+            color: white;
+        }
+
+        .hero-cta {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        @media (min-width: 640px) {
+            .hero-cta {
+                flex-direction: row;
+                align-items: center;
+            }
+        }
+
+        .hero-phone {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .hero-phone:hover {
+            color: white;
+        }
+
+        .hero-image {
+            display: none;
+        }
+
+        @media (min-width: 1024px) {
+            .hero-image {
+                display: block;
+                position: relative;
+            }
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 520px;
+            object-fit: cover;
+            border-radius: 1rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Stats Section */
+        .stats {
+            padding: 4rem 0;
+            background-color: var(--background);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3.5rem;
+        }
+
+        .stat-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s;
+        }
+
+        .stat-card:hover {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-value {
+            font-size: 1.875rem;
+            font-weight: 700;
+            color: var(--foreground);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--muted);
+        }
+
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .testimonial-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+
+        .testimonial-card:hover {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .testimonial-quote {
+            color: rgba(0, 0, 0, 0.8);
+            margin-bottom: 1rem;
+            font-style: italic;
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .author-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.875rem;
+        }
+
+        .author-info p:first-child {
+            font-weight: 600;
+            font-size: 0.875rem;
+            color: var(--foreground);
+        }
+
+        .author-info p:last-child {
+            font-size: 0.75rem;
+            color: var(--muted);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 4rem 0;
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-subtitle {
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-heading {
+            font-size: 2rem;
+        }
+
+        @media (min-width: 640px) {
+            .section-heading {
+                font-size: 2.25rem;
+            }
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .service-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(245, 158, 11, 0.4);
+            transform: translateY(-4px);
+        }
+
+        .service-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background-color: var(--accent);
+            color: #78350f;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.25rem 0.5rem;
+            border-radius: 9999px;
+        }
+
+        .service-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 8px;
+            background: rgba(245, 158, 11, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.125rem;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+
+        .service-card p {
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.65);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .service-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 600;
+            transition: gap 0.3s;
+        }
+
+        .service-link:hover {
+            gap: 0.5rem;
+        }
+
+        /* How It Works */
+        .how-it-works {
+            padding: 4rem 0;
+            background-color: var(--background);
+        }
+
+        .how-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        @media (min-width: 1024px) {
+            .how-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .how-image {
+            display: none;
+        }
+
+        @media (min-width: 1024px) {
+            .how-image {
+                display: block;
+            }
+        }
+
+        .how-image img {
+            width: 100%;
+            height: 420px;
+            object-fit: cover;
+            border-radius: 1rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .how-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .step {
+            display: flex;
+            gap: 1.25rem;
+        }
+
+        .step-number {
+            flex-shrink: 0;
+            width: 56px;
+            height: 56px;
+            border-radius: 12px;
+            background-color: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.125rem;
+        }
+
+        .step-content h3 {
+            font-size: 1.125rem;
+            margin-bottom: 0.25rem;
+            color: var(--foreground);
+        }
+
+        .step-content p {
+            font-size: 0.875rem;
+            color: var(--muted);
+            line-height: 1.6;
+        }
+
+        /* Why Choose Us */
+        .why-us {
+            padding: 4rem 0;
+            background-color: #f5f3f0;
+        }
+
+        .why-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        @media (min-width: 1024px) {
+            .why-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .why-reasons {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .reason {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .reason-icon {
+            flex-shrink: 0;
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            background-color: #fef3c7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #b45309;
+            font-size: 1.25rem;
+        }
+
+        .reason-content h4 {
+            font-weight: 600;
+            color: var(--foreground);
+            margin-bottom: 0.25rem;
+        }
+
+        .reason-content p {
+            font-size: 0.875rem;
+            color: var(--muted);
+            line-height: 1.6;
+        }
+
+        .why-image {
+            display: none;
+            position: relative;
+        }
+
+        @media (min-width: 1024px) {
+            .why-image {
+                display: block;
+            }
+        }
+
+        .why-image img {
+            width: 100%;
+            height: 460px;
+            object-fit: cover;
+            border-radius: 1rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        /* CTA Banner */
+        .cta-banner {
+            padding: 3rem 0;
+            background-color: var(--accent);
+            text-align: center;
+        }
+
+        .cta-banner h2 {
+            font-size: 1.875rem;
+            color: #78350f;
+            margin-bottom: 0.75rem;
+        }
+
+        .cta-banner p {
+            color: rgba(120, 53, 15, 0.8);
+            margin-bottom: 1.5rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Form Section */
+        .form-section {
+            padding: 4rem 0;
+            background-color: var(--background);
+        }
+
+        .form-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .form-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.25rem;
+        }
+
+        @media (min-width: 640px) {
+            .form-row {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--foreground);
+            margin-bottom: 0.375rem;
+        }
+
+        .required {
+            color: #dc2626;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background-color: var(--background);
+            color: var(--foreground);
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            ring: 2px;
+            ring-color: var(--accent);
+            border-color: transparent;
+        }
+
+        textarea {
+            resize: none;
+            min-height: 120px;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 1rem;
+            background-color: var(--accent);
+            color: #78350f;
+            border: none;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1.125rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 10px 15px -3px rgba(245, 158, 11, 0.3);
+        }
+
+        .form-submit:hover {
+            background-color: #fbbf24;
+            transform: scale(1.01);
+        }
+
+        .form-note {
+            text-align: center;
+            font-size: 0.75rem;
+            color: var(--muted);
+            margin-top: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--foreground);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 3rem 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .footer-section h4 {
+            color: white;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent);
+        }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-logo {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background-color: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #78350f;
+            font-weight: 700;
+        }
+
+        .footer-brand span {
+            color: white;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            font-size: 0.875rem;
+            text-align: center;
+        }
+
+        @media (min-width: 640px) {
+            .footer-bottom {
+                flex-direction: row;
+                justify-content: space-between;
+                text-align: left;
+            }
+        }
+
+        .social-links {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .social-link {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 1rem;
+        }
+
+        .social-link:hover {
+            background-color: var(--accent);
+            color: #78350f;
+        }
+
+        /* Mobile Sticky CTA */
+        .mobile-sticky {
+            display: flex;
+            gap: 0.75rem;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 40;
+            background-color: white;
+            border-top: 1px solid var(--border-color);
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+            padding: 0.75rem 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .mobile-sticky {
+                display: none;
+            }
+        }
+
+        .mobile-sticky a {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.75rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.875rem;
+            transition: all 0.3s;
+        }
+
+        .mobile-call {
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .mobile-quote {
+            background-color: var(--accent);
+            color: #78350f;
+        }
+
+        /* Fade up animation */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-up {
+            animation: fadeUp 0.6s ease forwards;
+        }
+
+        .fade-up:nth-child(1) { animation-delay: 0s; }
+        .fade-up:nth-child(2) { animation-delay: 0.1s; }
+        .fade-up:nth-child(3) { animation-delay: 0.2s; }
+        .fade-up:nth-child(4) { animation-delay: 0.3s; }
+        .fade-up:nth-child(5) { animation-delay: 0.4s; }
+        .fade-up:nth-child(6) { animation-delay: 0.5s; }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">
+                    <div class="logo-icon">🔧</div>
+                    <span>ProLocal<span style="color: var(--accent);">.</span></span>
+                </a>
+                <div class="nav-links">
+                    <a href="#services">Services</a>
+                    <a href="#how-it-works">How It Works</a>
+                    <a href="#reviews">Reviews</a>
+                    <a href="#quote">Contact</a>
+                    <a href="#quote" class="cta-btn">Get a Free Quote</a>
+                </div>
+                <button class="menu-toggle">☰</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="trust-badge">
+                        <div class="stars">
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                        </div>
+                        <span>Rated 4.8 stars · 150+ happy customers</span>
+                    </div>
+
+                    <h1>Get the Job Done Right — <span class="highlight">Without the Hassle</span></h1>
+
+                    <p>Trusted by 150+ local customers for fast, reliable home services. Same-day availability, transparent pricing, and a team that actually shows up.</p>
+
+                    <div class="benefits">
+                        <div class="benefit-item">⏱️ Same-day service</div>
+                        <div class="benefit-item">💰 No hidden fees</div>
+                        <div class="benefit-item">🛡️ Fully insured</div>
+                    </div>
+
+                    <div class="hero-cta">
+                        <a href="#quote" class="cta-btn cta-btn-lg">Get a Free Quote →</a>
+                        <a href="tel:07831834580" class="hero-phone">📞 07831834580</a>
+                    </div>
+                </div>
+
+                <div class="hero-image">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663470947782/j2UzuQoVLbVM9yAPn6HpVJ/hero-worker-Fqy4cAE9fWZKEmMtPm4EL9.webp" alt="Professional service technician" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section id="reviews" class="stats">
+        <div class="container">
+            <div class="section-title fade-up">
+                <p class="section-subtitle">Trusted by the community</p>
+                <h2 class="section-heading">Trusted by Local Customers</h2>
+            </div>
+
+            <div class="stats-grid fade-up">
+                <div class="stat-card">
+                    <div class="stat-value">4.8★</div>
+                    <div class="stat-label">Average Rating</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">150+</div>
+                    <div class="stat-label">Happy Customers</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">8 yrs</div>
+                    <div class="stat-label">In Business</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">98%</div>
+                    <div class="stat-label">Would Recommend</div>
+                </div>
+            </div>
+
+            <div class="testimonials">
+                <div class="testimonial-card fade-up">
+                    <div class="stars" style="margin-bottom: 1rem;">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <p class="testimonial-quote">"Fast, professional and reliable. They showed up on time, got the job done quickly, and the price was exactly what they quoted. Highly recommend!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">S</div>
+                        <div class="author-info">
+                            <p>Sarah M.</p>
+                            <p>Homeowner</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card fade-up">
+                    <div class="stars" style="margin-bottom: 1rem;">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <p class="testimonial-quote">"Best service I've used locally. The team was courteous, cleaned up after themselves, and the work quality was outstanding. Will definitely use again."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">J</div>
+                        <div class="author-info">
+                            <p>James T.</p>
+                            <p>Local Business Owner</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card fade-up">
+                    <div class="stars" style="margin-bottom: 1rem;">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <p class="testimonial-quote">"Called in the morning, they were here by noon. Fixed the issue in under an hour. Transparent pricing, no surprises on the invoice. Couldn't ask for more."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">L</div>
+                        <div class="author-info">
+                            <p>Linda R.</p>
+                            <p>Homeowner</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-title">
+                <p class="section-subtitle">What we do</p>
+                <h2 class="section-heading">Our Services</h2>
+                <p style="color: rgba(255, 255, 255, 0.7); margin-top: 0.75rem; max-width: 600px; margin-left: auto; margin-right: auto;">From quick repairs to full installations — we handle it all with speed and professionalism.</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card fade-up">
+                    <span class="service-badge">Most Popular</span>
+                    <div class="service-icon">🏠</div>
+                    <h3>Home Repairs</h3>
+                    <p>Stop living with that broken fixture. We handle repairs fast so your home works the way it should — same day, no fuss.</p>
+                    <a href="#quote" class="service-link">Get a quote →</a>
+                </div>
+
+                <div class="service-card fade-up">
+                    <div class="service-icon">⚡</div>
+                    <h3>Electrical Work</h3>
+                    <p>From faulty outlets to full panel upgrades, our certified electricians deliver safe, code-compliant work every time.</p>
+                    <a href="#quote" class="service-link">Get a quote →</a>
+                </div>
+
+                <div class="service-card fade-up">
+                    <div class="service-icon">🔧</div>
+                    <h3>Plumbing Services</h3>
+                    <p>Leaks, clogs, installations — we fix plumbing problems at the root cause so they don't come back.</p>
+                    <a href="#quote" class="service-link">Get a quote →</a>
+                </div>
+
+                <div class="service-card fade-up">
+                    <span class="service-badge">Save 20%</span>
+                    <div class="service-icon">🛡️</div>
+                    <h3>Maintenance Plans</h3>
+                    <p>Prevent costly breakdowns with our seasonal maintenance plans. One call covers everything.</p>
+                    <a href="#quote" class="service-link">Get a quote →</a>
+                </div>
+
+                <div class="service-card fade-up">
+                    <span class="service-badge">24/7</span>
+                    <div class="service-icon">🚨</div>
+                    <h3>Emergency Call-Out</h3>
+                    <p>Can't wait? Neither can we. Our emergency team responds within 2 hours, 7 days a week.</p>
+                    <a href="#quote" class="service-link">Get a quote →</a>
+                </div>
+
+                <div class="service-card fade-up">
+                    <div class="service-icon">✓</div>
+                    <h3>Inspections & Reports</h3>
+                    <p>Buying or selling? Our detailed property inspection reports give you full peace of mind.</p>
+                    <a href="#quote" class="service-link">Get a quote →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <div class="how-content">
+                <div class="how-image">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663470947782/j2UzuQoVLbVM9yAPn6HpVJ/team-working-HZfdrTeoEKvko8pqzQtawC.webp" alt="Our team at work" />
+                </div>
+
+                <div>
+                    <div class="fade-up">
+                        <p class="section-subtitle">Simple process</p>
+                        <h2 class="section-heading">Simple 3-Step Process</h2>
+                        <p style="color: var(--muted); margin-top: 1rem;">We've made it as easy as possible to get the help you need. No complicated forms, no waiting around.</p>
+                    </div>
+
+                    <div class="how-steps">
+                        <div class="step fade-up">
+                            <div class="step-number">01</div>
+                            <div class="step-content">
+                                <h3>Request a Quote</h3>
+                                <p>Fill out our quick form or give us a call. Tell us what you need and when works for you.</p>
+                            </div>
+                        </div>
+
+                        <div class="step fade-up">
+                            <div class="step-number">02</div>
+                            <div class="step-content">
+                                <h3>We Contact You</h3>
+                                <p>A local expert calls you back within 30 minutes to confirm details and provide a transparent price.</p>
+                            </div>
+                        </div>
+
+                        <div class="step fade-up">
+                            <div class="step-number">03</div>
+                            <div class="step-content">
+                                <h3>Job Completed Fast</h3>
+                                <p>Our team arrives on time, does the work to the highest standard, and leaves your space clean.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="fade-up" style="margin-top: 2rem;">
+                        <a href="#quote" class="cta-btn cta-btn-lg">Get a Free Quote →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-us">
+        <div class="container">
+            <div class="why-content">
+                <div>
+                    <div class="fade-up">
+                        <p class="section-subtitle">Why us</p>
+                        <h2 class="section-heading">Why Choose ProLocal?</h2>
+                        <p style="color: var(--muted); margin-top: 1rem;">We're not just another service company. We're your neighbours — and we treat your home like our own.</p>
+                    </div>
+
+                    <div class="why-reasons">
+                        <div class="reason fade-up">
+                            <div class="reason-icon">📍</div>
+                            <div class="reason-content">
+                                <h4>Local & Trusted</h4>
+                                <p>We live and work in this community. Our reputation is everything to us.</p>
+                            </div>
+                        </div>
+
+                        <div class="reason fade-up">
+                            <div class="reason-icon">🛡️</div>
+                            <div class="reason-content">
+                                <h4>Fully Insured & Certified</h4>
+                                <p>All our technicians are licensed, insured, and background-checked.</p>
+                            </div>
+                        </div>
+
+                        <div class="reason fade-up">
+                            <div class="reason-icon">⏱️</div>
+                            <div class="reason-content">
+                                <h4>Fast Response Time</h4>
+                                <p>We answer calls within minutes and can be on-site same day.</p>
+                            </div>
+                        </div>
+
+                        <div class="reason fade-up">
+                            <div class="reason-icon">💰</div>
+                            <div class="reason-content">
+                                <h4>Competitive Pricing</h4>
+                                <p>Transparent quotes upfront. No hidden fees, no surprises on the invoice.</p>
+                            </div>
+                        </div>
+
+                        <div class="reason fade-up">
+                            <div class="reason-icon">✓</div>
+                            <div class="reason-content">
+                                <h4>Satisfaction Guaranteed</h4>
+                                <p>If you're not happy, we come back and make it right. No questions asked.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="why-image">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663470947782/j2UzuQoVLbVM9yAPn6HpVJ/happy-customer-YLVCM7mcZKod79CmvBBKyU.webp" alt="Happy customer with service professional" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="cta-banner">
+        <div class="container fade-up">
+            <h2>Ready to get started? It only takes 60 seconds.</h2>
+            <p>No obligation. No spam. Just a fast, honest quote.</p>
+            <a href="#quote" class="cta-btn cta-btn-lg" style="background-color: #78350f; color: white;">Get a Free Quote →</a>
+        </div>
+    </section>
+
+    <!-- Form Section -->
+    <section id="quote" class="form-section">
+        <div class="container">
+            <div class="form-container">
+                <div class="form-header fade-up">
+                    <p class="section-subtitle">Free quote</p>
+                    <h2 class="section-heading">Get Your Free Quote Today</h2>
+                    <p style="color: var(--muted); margin-top: 0.75rem;">Fill in your details below and we'll get back to you within 30 minutes.</p>
+                </div>
+
+                <div class="form-card fade-up">
+                    <form onsubmit="handleSubmit(event)">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Full Name <span class="required">*</span></label>
+                                <input type="text" id="name" placeholder="John Smith" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number <span class="required">*</span></label>
+                                <input type="tel" id="phone" placeholder="07831834580" required />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address <span class="required">*</span></label>
+                            <input type="email" id="email" placeholder="john@example.com" required />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="service">Service Needed <span class="required">*</span></label>
+                            <select id="service" required>
+                                <option value="">Select a service...</option>
+                                <option value="home-repairs">Home Repairs</option>
+                                <option value="electrical">Electrical Work</option>
+                                <option value="plumbing">Plumbing Services</option>
+                                <option value="maintenance">Maintenance Plan</option>
+                                <option value="emergency">Emergency Call-Out</option>
+                                <option value="inspection">Inspection & Report</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message <span style="color: var(--muted); font-size: 0.75rem;">(optional)</span></label>
+                            <textarea id="message" placeholder="Tell us more about what you need..."></textarea>
+                        </div>
+
+                        <button type="submit" class="form-submit">Get My Free Quote →</button>
+                        <p class="form-note">🔒 No spam. No obligation. We respect your privacy.</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section style="padding: 5rem 0; background-color: var(--primary); color: white; position: relative; overflow: hidden;">
+        <div style="position: absolute; inset: 0; opacity: 0.05; background-image: url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\"); pointer-events: none;"></div>
+        <div class="container" style="text-align: center; position: relative; z-index: 10;">
+            <h2 style="font-size: 2rem; margin-bottom: 1rem;">Ready to Get Started?</h2>
+            <p style="color: rgba(255, 255, 255, 0.75); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">Contact us today and get a fast, no-obligation quote. Most jobs booked same day.</p>
+            <div style="display: flex; flex-direction: column; gap: 1rem; justify-content: center; align-items: center;">
+                <a href="#quote" class="cta-btn cta-btn-lg">Get a Free Quote →</a>
+                <a href="tel:07831834580" style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); color: white; font-weight: 600; border-radius: 8px; padding: 1rem 2rem; text-decoration: none; transition: all 0.3s;">📞 Call 07831834580</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <div class="footer-logo">🔧</div>
+                        <span>ProLocal<span style="color: var(--accent);">.</span></span>
+                    </div>
+                    <p style="font-size: 0.875rem; line-height: 1.6;">Your trusted local service professionals. Fast, reliable, and always transparent.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#services">Home Repairs</a></li>
+                        <li><a href="#services">Electrical Work</a></li>
+                        <li><a href="#services">Plumbing</a></li>
+                        <li><a href="#services">Maintenance Plans</a></li>
+                        <li><a href="#services">Emergency Call-Out</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="tel:07831834580">📞 07831834580</a></li>
+                        <li><a href="mailto:emmanpeace99@gmail.com">📧 emmanpeace99@gmail.com</a></li>
+                        <li>📍 Serving the greater metro area and surrounding suburbs</li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Hours</h4>
+                    <ul>
+                        <li>Mon–Fri: 7am – 7pm</li>
+                        <li>Saturday: 8am – 5pm</li>
+                        <li>Sunday: Emergency only</li>
+                    </ul>
+                    <div class="social-links" style="margin-top: 1rem;">
+                        <a href="#" class="social-link" title="Facebook">f</a>
+                        <a href="#" class="social-link" title="Instagram">📷</a>
+                        <a href="https://wa.me/447831834580" class="social-link" title="WhatsApp">💬</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 ProLocal Services. All rights reserved.</p>
+                <p>Licensed · Insured · Locally Owned</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Sticky CTA -->
+    <div class="mobile-sticky">
+        <a href="tel:07831834580" class="mobile-call">📞 Call Now</a>
+        <a href="#quote" class="mobile-quote">Free Quote →</a>
+    </div>
+
+    <script>
+        // Scroll animations
+        function observeElements() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.fade-up').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(24px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        }
+
+        // Form submission
+        function handleSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            alert(`Thank you, ${name}! We'll call you at ${phone} within 20 minutes.`);
+            event.target.reset();
+        }
+
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', observeElements);
+    </script>
+</body>
+</html>
